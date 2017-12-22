@@ -1,0 +1,15 @@
+name: DungeonsLink
+main: com.iraqimilitant.dungeonslink.DungeonsLink
+version: 1.00
+
+commands:
+  perk:
+    description: base command for all perk commands
+    usage: /perk toggle <name>
+    permission: dungeonslink.perk
+    permission-message: You do not have perk permissions
+  raider:
+    description: Used to check raider info
+    usage: /raider <name>
+    permission: dungeonslink.raider
+    permission-message: You do not have permission to view player info

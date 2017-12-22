@@ -1,0 +1,81 @@
+#  group form:
+#    description: use this to create a group.
+#    usage: /formgroup <player> [player] [player] [...]
+#    permission: dungeon.group
+#    permission-message: You do not have group permissions
+#  group add:
+#    description: use this to add to your group.
+#    usage: /addtogroup <player> [player] [player] [...]
+#    permission: dungeon.group
+#    permission-message: You do not have group permissions
+#  group leave:
+#    description: use this to leave your group.
+#    usage: /leavegroup
+#    permission: dungeon.group
+#    permission-message: You do not have group permissions
+#  rating set:
+#    description: for admins to set the rating for a target player
+#    usage: /formgroup <player> <local/global> <value>
+#    permission: dungeon.rating.admin
+#    permission-message: You do not have permission to edit ratings
+
+name: Dungeons
+main: com.iraqimilitant.dungeons.Dungeons
+version: 1.00
+softdepend: [Vault]
+
+commands:
+  group:
+    description: base command for all group commands
+    usage: /group <form,invite,leave,ready,ready set>
+    permission: dungeons.group
+    permission-message: You do not have group permissions
+  rating:
+    description: base command for all rating commands
+    usage: /rating
+    permission: dungeons.rating
+    permission-message: You do not have permission to view your rating
+  dungeon:
+    description: base command for all dungeon commands
+    usage: /dungeon ?
+    permission: dungeons.dungeon
+    permission-message: You do not have permission to use dungeons
+  dm:
+    description: base command for all dm commands
+    usage: /dm 
+    permission: dungeons.dm
+    permission-message: You do not have permission to be a dungeon master
+  mob:
+    description: Used to spawn modified mobs
+    usage: /dm ?
+    permission: dungeons.mob
+    permission-message: You do not have permission to spawn mobs
+  raider:
+    description: Used to check raider info
+    usage: /raider <name>
+    permission: dungeons.raider
+    permission-message: You do not have permission to view player info
+  gear:
+    description: Used for loot re-roll and repairs
+    usage: /gear <roll,repair,trash>
+    permission: dungeons.gear
+    permission-message: You do not have permission to use gear commands
+  perk:
+    description: Used for enabling perks
+    usage: /perk toggle <name>
+    permission: dungeons.perk
+    permission-message: You do not have permission to use perk commands
+permissions:
+  dungeons.*:
+    description: base perm for dungeons
+    children:
+      dungeons.admin: true
+      dungeons.gear: true
+      dungeons.raider: true
+      dungeons.dm: true
+      dungeons.group: true
+      dungeons.rating: true
+      dungeons.dungeon: true
+      dungeons.perk: true
+  dungeons.admin:
+    description: permission for basic admin features

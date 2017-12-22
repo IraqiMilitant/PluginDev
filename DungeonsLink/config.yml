@@ -1,0 +1,9 @@
+#Dungeon Configuration File
+#This plugin NEEDS a SQL server to function
+host: localhost
+user: root
+pass: token
+port: 3306
+dbName: dungeon
+serverName: temp
+sendWelcome: false

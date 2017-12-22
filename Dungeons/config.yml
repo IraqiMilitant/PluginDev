@@ -1,0 +1,323 @@
+#Dungeon Configuration File
+#This plugin NEEDS a SQL server to function
+host: 151.80.24.222
+user: root
+pass: token
+port: 3306
+dbName: dungeon
+
+sendWelcome: false
+
+trollshawn: true
+
+#important as all servers share the same database
+serverName: TEMP
+
+#players go through the dungeons in groups, default max size is 3
+maxGroupSize: 3
+
+#dungeon world
+dungeonW: world
+
+#Where to drop the players after finishing a dungeon
+exitX: 100
+exitY: 100
+exitZ: 100
+
+#Where to drop the players waiting to respawn
+resX: 100
+resY: 100
+resZ: 100
+
+cashReward: 50
+
+#block ID to use for marking room exits
+marker: 41
+
+#dungeon ownership time in real hours, how long the dungeon is guaranteed not to be re-configured by another DM
+ownerTime: 24
+
+#what commands will be allowed while in a dungeon or editing a dungeon
+cmdwhitelist:
+    - dm
+    - group
+    - dungeon
+    - res
+    - enderchest
+    - ec
+    - raider
+    - rating
+    - gear
+    - mob
+
+
+themes:
+  nether:
+    generation: basic
+    torches: false
+    floor:
+      '87': '0:10'
+      '88': '0:3'
+      '112': '0:2'
+    other:
+      '87': '0:10'
+      '89': '1:5'
+      '88': '0:3'
+      '112': '0:2'
+  nethercave:
+    generation: cave
+    torches: false
+    floor:
+      '87': '0:10'
+      '88': '0:3'
+      '112': '0:2'
+    other:
+      '87': '0:10'
+      '89': '1:5'
+      '88': '0:3'
+      '112': '0:2'
+  spaciousnethercave:
+    generation: spacious
+    torches: false
+    floor:
+      '87': '0:10'
+      '88': '0:3'
+      '112': '0:2'
+    other:
+      '87': '0:10'
+      '89': '1:5'
+      '88': '0:3'
+      '112': '0:2'
+  cave:
+    generation: cave
+    torches: false
+    floor:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+    other:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+  spaciouscave:
+    generation: SPACIOUS
+    torches: false
+    floor:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+    other:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+  litcave:
+    generation: cave
+    torches: true
+    floor:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+    other:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+  basiccave:
+    generation: basic
+    torches: true
+    floor:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+    other:
+      '1': '0:8'
+      '15': '0:5'
+      '48': '0:3'
+      '3': '0:2'
+
+hazards:
+  NONE: 0
+  LAVA: 3
+  FIRE: 8
+  VOID: 12
+  WATER: 6
+
+effects:
+  SPEED: -2
+  SLOWNESS: 5
+  INCREASE_DAMAGE: -5
+  JUMP: -2
+  CONFUSION: 10
+  REGENERATION: -10
+  DAMAGE_RESISTANCE: -8
+  FIRE_RESISTANCE: -4
+  WATER_BREATHING: -6
+  INVISIBILITY: -10
+  BLINDNESS: 8
+  NIGHT_VISION: -2
+  HUNGER: 5
+  WEAKNESS: 7
+  POISON: 12
+  WITHER: 15
+  HEALTH_BOOST: -5
+  ABSORPTION: -2
+  SATURATION: -2
+
+mobgroups:
+  zombie:
+    basediff: 2
+    mobs:
+        - zombie
+        - zombie
+        - zombie
+        - zombie
+        - zombie
+  skeleton:
+    basediff: 10
+    mobs:
+        - skeleton
+        - skeleton
+        - skeleton
+        - skeleton
+        - skeleton
+  overworld:
+    basediff: 8
+    mobs:
+        - zombie
+        - skeleton
+        - spider
+        - cave_spider
+        - creeper
+  nether:
+    basediff: 12
+    mobs:
+        - blaze
+        - magma_cube
+        - pig_zombie
+        - wither_skeleton
+
+mobabilities:
+  abilities:
+    LEECH: 7
+    SPLIT: 5
+    RANGERESIST: 4
+    THORNS: 8
+    MASSIVE: 5
+  groupabilities:
+    LIFELINK: 8
+    POWERLINK: 10
+  potioneffects:
+    SPEED: 5
+    SLOWNESS: -5
+    INCREASE_DAMAGE: 6
+    JUMP: 0
+    CONFUSION: -3
+    REGENERATION: 3
+    DAMAGE_RESISTANCE: 8
+    FIRE_RESISTANCE: 4
+    WATER_BREATHING: 0
+    INVISIBILITY: 15
+    BLINDNESS: -8
+    NIGHT_VISION: 0
+    HUNGER: 0
+    WEAKNESS: -7
+    POISON: 0
+    WITHER: -15
+    HEALTH_BOOST: 5
+    ABSORPTION: 2
+    SATURATION: 0
+  
+loottable:
+  weapons:
+    melee:
+      WOOD_SWORD: 5
+      STONE_SWORD: 50
+      GOLD_SWORD: 150
+      IRON_SWORD: 300
+      DIAMOND_SWORD: 450
+    ranged:
+      BOW: 25
+  armour:
+    LEATHER_BOOTS: 5
+    LEATHER_CHESTPLATE: 5
+    LEATHER_HELMET: 5
+    LEATHER_LEGGINGS: 5
+    GOLD_BOOTS: 50
+    GOLD_CHESTPLATE: 100
+    GOLD_HELMET: 50
+    GOLD_LEGGINGS: 50
+    CHAINMAIL_BOOTS: 150
+    CHAINMAIL_CHESTPLATE: 200
+    CHAINMAIL_HELMET: 150
+    CHAINMAIL_LEGGINGS: 150
+    IRON_BOOTS: 250
+    IRON_CHESTPLATE: 300
+    IRON_HELMET: 250
+    IRON_LEGGINGS: 250
+    DIAMOND_BOOTS: 350
+    DIAMOND_CHESTPLATE: 400
+    DIAMOND_HELMET: 350
+    DIAMOND_LEGGINGS: 350
+  enchants:
+    weapon:
+      melee:
+        DAMAGE_ALL: 5
+        DAMAGE_ARTHROPODS: 5
+        DAMAGE_UNDEAD: 5
+        FIRE_ASPECT: 5
+        KNOCKBACK: 4
+        DURABILITY: 3
+      ranged:
+        ARROW_DAMAGE: 8
+        ARROW_FIRE: 8
+        ARROW_INFINITE: 200
+        ARROW_KNOCKBACK: 11
+        DURABILITY: 3
+    armour:
+      PROTECTION_ENVIRONMENTAL: 5
+      PROTECTION_EXPLOSIONS: 5
+      PROTECTION_FALL: 2
+      PROTECTION_FIRE: 6
+      PROTECTION_PROJECTILE: 6
+      THORNS: 6
+      DURABILITY: 3
+  potions:
+    normal:
+      FIRE_RESISTANCE: 5
+      INSTANT_HEAL: 5
+      INVISIBILITY: 7
+      JUMP: 3
+      NIGHT_VISION: 2
+      REGEN: 7
+      SPEED: 4
+      STRENGTH: 6
+      WATER_BREATHING: 2
+    splash:
+      FIRE_RESISTANCE: 5
+      INSTANT_DAMAGE: 4
+      INSTANT_HEAL: 5
+      INVISIBILITY: 7
+      JUMP: 3
+      NIGHT_VISION: 2
+      POISON: 6
+      REGEN: 7
+      SLOWNESS: 5
+      SPEED: 4
+      STRENGTH: 6
+      WATER_BREATHING: 2
+      WEAKNESS: 5
+  misc:
+    GOLDEN_APPLE: 4
+    COOKED_BEEF: 1
+    ARROW: 1
+    MILK_BUCKET: 2
+    IRON_INGOT: 2
+    SHIELD: 15
+  armoursets:
+    BATMAN: 15
